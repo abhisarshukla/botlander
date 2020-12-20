@@ -3,7 +3,7 @@ const axios = require("axios");
 module.exports = {
   name: "meow",
   description: "Meow Meow!",
-  catLines: ["Behold!", "🐈", "Meow Meow!", "Meow you doin'"],
+  catLines: ["Behold!", "🐈", "Meow Meow!", "Meow you doin'?"],
   async execute(message, args) {
     await axios({
       method: "get",
