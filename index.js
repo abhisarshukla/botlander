@@ -27,7 +27,7 @@ client.on("ready", () => {
 
 client.on("message", (message) => {
   if (
-    message.channel.id == process.env.BOTCHANNELID ||
+    message.channel.id != process.env.BOTCHANNELID ||
     !message.content.startsWith(prefix) ||
     message.author.bot
   )
