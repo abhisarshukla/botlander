@@ -9,6 +9,9 @@ const app = express();
 app.get("/", (req, res) => {
   res.send("Botlander is Well and Running!");
 });
+app.listen(process.env.PORT, () => {
+  console.log(`botlander-discord app listening port ${process.env.PORT}`);
+});
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
