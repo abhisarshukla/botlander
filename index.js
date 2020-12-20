@@ -1,7 +1,14 @@
 const Discord = require("discord.js");
 const dotenv = require("dotenv");
 const fs = require("fs");
+const express = require("express");
 const { prefix } = require("./config.json");
+
+// For Cron-Job webapp hit to prevent heroku-app from sleeping
+const app = express();
+app.get("/", (req, res) => {
+  res.send("Botlander is Well and Running!");
+});
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -22,7 +29,7 @@ for (const file of commandFiles) {
 dotenv.config();
 client.login(process.env.BOTTOKEN);
 client.on("ready", () => {
-  console.log("💖");
+  console.log("Successfully Logged!");
 });
 
 client.on("message", (message) => {
