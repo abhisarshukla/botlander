@@ -10,7 +10,7 @@ module.exports = {
       const nface = parseInt(args[0]);
       const ndice = parseInt(args[1]);
       let val = "";
-      while (ndice < -1) {
+      while (ndice > 0) {
         val += Math.floor(Math.random() * nface + 1) + " ";
         ndice--;
       }
