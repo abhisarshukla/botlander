@@ -1,4 +1,4 @@
-const axios = require("axios");
+const axios = require("axios").default;
 
 module.exports = {
   name: "joke",
@@ -10,6 +10,9 @@ module.exports = {
       params: {
         blacklistFlags: "racist,sexist",
       },
+    }).catch((error) => {
+      console.error(error);
+      console.log("Above Error happened on fetching from s443.net api.");
     });
     const jokeSetup = response.data.setup;
     const jokeDelivery = response.data.delivery;
@@ -22,6 +25,11 @@ module.exports = {
           Accept: "application/json",
           "User-Agent": "Botlander Discord Bot",
         },
+      }).catch((error) => {
+        console.error(error);
+        console.log(
+          "Above Error happened on fetching from icanhazdadjoke.com api."
+        );
       });
       joke = response.data.joke;
     }
