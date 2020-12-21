@@ -32,6 +32,7 @@ module.exports = {
         );
       });
       joke = response.data.joke;
+      console.log(response);
     }
     message.channel.send(joke);
   },
