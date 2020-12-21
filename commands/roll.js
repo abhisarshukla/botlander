@@ -13,9 +13,8 @@ module.exports = {
       if (isNaN(nface) || isNaN(ndice)) {
         message.channel.send("Please Enter a valid number!");
       } else {
-        while (ndice > 0) {
+        for (let i = ndice; i > 0; i--) {
           val += Math.floor(Math.random() * nface + 1) + " ";
-          ndice--;
         }
         message.channel.send(val);
       }
