@@ -17,8 +17,7 @@ module.exports = {
       message.channel.send(val);
     } else {
       const usage =
-        "**Usage**:\n`!roll [number of faces] [number of dice]`\n*default* \
-        for number of faces is **6**\n*default for number of dice is **1**";
+        "**Usage**:\n`!roll [number of faces] [number of dice]`\n*default* for number of faces is **6**\n*default* for number of dice is **1**";
       message.channel.send(usage);
     }
   },
