@@ -9,12 +9,16 @@ module.exports = {
     } else if (args.length == 2) {
       const nface = parseInt(args[0]);
       const ndice = parseInt(args[1]);
-      let val = "";
-      while (ndice > 0) {
-        val += Math.floor(Math.random() * nface + 1) + " ";
-        ndice--;
+      if (isNaN(nface) || isNaN(ndice)) {
+        message.channel.send("Please Enter a valid number!");
+      } else {
+        let val = "";
+        while (ndice > 0) {
+          val += Math.floor(Math.random() * nface + 1) + " ";
+          ndice--;
+        }
+        message.channel.send(val);
       }
-      message.channel.send(val);
     } else {
       const usage =
         "**Usage**:\n`!roll [number of faces] [number of dice]`\n*default* for number of faces is **6**\n*default* for number of dice is **1**";
