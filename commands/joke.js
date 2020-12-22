@@ -8,7 +8,7 @@ module.exports = {
       method: "get",
       url: "https://sv443.net/jokeapi/v2/joke/Any",
       params: {
-        blacklistFlags: "racist,sexist",
+        blacklistFlags: "racist,sexist,nsfw",
       },
     }).catch((error) => {
       console.error(error);
@@ -32,7 +32,6 @@ module.exports = {
         );
       });
       joke = response.data.joke;
-      console.log(response);
     }
     message.channel.send(joke);
   },
